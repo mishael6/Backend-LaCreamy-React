@@ -27,9 +27,13 @@ const globalLimiter = rateLimit({
 // Middleware
 app.use(globalLimiter);
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  origin: [
+    'http://localhost:5173',
+    'https://backend-lacreamy-react.onrender.com', // add after netlify deploy
+  ],
   credentials: true,
 }));
+
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
