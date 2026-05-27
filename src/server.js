@@ -29,7 +29,7 @@ app.use(globalLimiter);
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://backend-lacreamy-react.onrender.com', // add after netlify deploy
+    'https://lacreamy.netlify.app', // add after netlify deploy
   ],
   credentials: true,
 }));
