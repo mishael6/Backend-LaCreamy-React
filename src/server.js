@@ -35,7 +35,7 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
-app.options('*', cors());
+app.options('/{*path}', cors());
 
 const globalLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
